@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação</title>
+    <style>
+        /* Adicione um estilo para as estrelas (pode personalizar conforme necessário) */
+        .rating {
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .rating > span {
+            display: inline-block;
+            position: relative;
+            width: 1.1em;
+            color: grey;  /* Adicionei esta linha para definir a cor padrão das estrelas */
+        }
+
+        .rating > span:hover:before,
+        .rating > span.selected:before, /* Adicionei esta linha para estilizar estrelas selecionadas */
+        .rating > span:hover ~ span:before,
+        .rating > span.selected ~ span:before { /* Adicionei esta linha para estilizar estrelas à direita das selecionadas */
+            content: "\2605";
+            position: absolute;
+            color: gold;  /* Adicionei esta linha para definir a cor das estrelas selecionadas */
+        }
+
+        /* Adicione estilo para a exibição dos resultados */
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Avaliação -->
+    <div>
+        <p>Avalie a foto:</p>
+        <div class="rating" onclick="rate(event)">
+            <span data-value="5">☆</span>
+            <span data-value="4">☆</span>
+            <span data-value="3">☆</span>
+            <span data-value="2">☆</span>
+            <span data-value="1">☆</span>
+        </div>
+    </div>
+
+    <!-- Resultados -->
+    <div class="result">
+        <p>Total de avaliações: <span id="totalRatings">0</span></p>
+        <p>Média de avaliação: <span id="averageRating">0</span></p>
+    </div>
+
+    <script>
+        let totalRatings = 0;
+        let totalPoints = 0;
+
+        function rate(event) {
+            // Obtém o valor da estrela clicada
+            const ratingValue = parseInt(event.target.getAttribute("data-value"));
+            
+            // Incrementa a contagem e adiciona os pontos
+            totalRatings++;
+            totalPoints += ratingValue;
+
+            updateResults();
+        }
+
+        function updateResults() {
+            // Atualiza os resultados exibidos
+            const averageRating = (totalPoints / totalRatings).toFixed(2);
+            document.getElementById("totalRatings").innerText = totalRatings;
+            document.getElementById("averageRating").innerText = averageRating;
+        }
+    </script>
+
+</body>
+</html>

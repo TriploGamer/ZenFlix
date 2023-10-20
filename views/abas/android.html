@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+body {
+    overflow-x: hidden; /* Impede a rolagem horizontal */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Adicione esta linha para centralizar verticalmente */
+    background-color: #000;
+    color: #fff;
+}
+
+#image-container {
+    background: url('/img/footer-bg.jpg') no-repeat center center;
+    background-size: 100% auto;
+    width: 100%;
+    height: 200px;
+    position: relative;
+    border-radius: none;
+    text-align: center;
+}
+
+#image-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#container {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    color: silver;
+}
+
+#container2 {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 1px;
+}
+
+.download-button {
+    padding: 15px 40px;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.download-button:hover {
+    background-color: #b2070a;
+}
+
+/* Estilos para dispositivos com largura menor que 768px (por exemplo, dispositivos móveis) */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    #image-container {
+        height: 200px;
+    }
+    #container, #container2 {
+        padding: 10px;
+    }
+    .download-button {
+        padding: 10px 20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div id="image-container">
+<div id="image-overlay">
+<a href="/" style="text-decoration: none;"><h1 style="color: #e50914;">ZenFlix</h1></a>
+</div>
+</div>
+
+<div id="container">
+<div id="container2">
+<p style="font-size: 20px;">Faça o download do ZenFlix agora e desfrute gratuitamente do nosso extenso catálogo na palma da sua mão! Não perca tempo, faça o download já.</p>
+</div>
+<div id="container2">
+    <p style="font-size: 20px;color: #b2070a;">O download do aplicativo está disponível exclusivamente para:</p>
+    <p style="font-size: 20px;color: #fff;">ANDROID | TV-BOX | ANDROID-TV!</p>
+    <a class="download-button" href="/apks/ZenFlix_1.3.0.apk" download><b>CLIQUE PARA BAIXAR!</b></a>
+    <p style="font-size: 20px;">O download do aplicativo está disponível acima. Embora não ofereçamos um tutorial de instalação, você pode facilmente encontrar guias no YouTube, por exemplo, pesquisando "como instalar APK no Android".</p>
+</div>
+</div>
+
+</body>
+</html>
